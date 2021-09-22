@@ -1,0 +1,235 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'exo 2' , sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(45deg , #2ecc71  ,#16a085); */
+    background: #091921;
+}
+body.light{
+    background: #d1dae3;
+}
+.clock{
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 10px solid #091921;
+    background-color: #091921;
+    box-shadow: -8px -8px 15px rgba(255,255,255,0.05),
+                20px 20px 20px rgba(0,0,0,0.3),
+                inset -8px -8px 15px rgba(255,255,255,0.05),
+                inset 20px 20px 20px rgba(0,0,0,0.3);
+}
+body.light .clock{
+    background: #d1dae3;
+    border: 10px solid #cad3dc;
+    box-shadow: -8px -8px 15px rgba(255,255,255,0.5),
+                10px 10px 10px rgba(0,0,0,0.3),
+                inset -8px -8px 15px rgba(255,255,255,0.5),
+                inset 10px 10px 10px rgba(0,0,0,0.3);
+}
+.clock::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(285deg , rgba(0,0,0,0.175) 50% , rgba(0,0,0,0.1) 50% );
+}
+.light .clock::after{
+    background: linear-gradient(285deg , rgba(139, 135, 135, 0.175) 50% , rgba(187, 166, 166, 0.1) 50% );
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 13px;
+    height: 13px;
+    z-index: 13;
+    background-color: #405c6b;
+    border-radius: 50%;
+}
+body.light .clock::before{
+    background-color: #4747b6;
+}
+.num{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: gray;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 18px;
+}
+.num::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 15px;
+    background-color: gray;
+}
+.num1{
+    transform: rotate(30deg);
+}
+.num2{
+    transform: rotate(60deg);
+}
+.num3{
+    transform: rotate(90deg);
+}
+.num4{
+    transform: rotate(120deg);
+}
+.num5{
+    transform: rotate(150deg);
+}
+.num6{
+    transform: rotate(180deg);
+}
+.num7{
+    transform: rotate(210deg);
+}
+.num8{
+    transform: rotate(240deg);
+}
+.num9{
+    transform: rotate(270deg);
+}
+.num10{
+    transform: rotate(300deg);
+}
+.num11{
+    transform: rotate(330deg);
+}
+.num12{
+    transform: rotate(360deg);
+}
+.num1 div{
+    transform: rotate(-30deg);
+}
+.num2 div{
+    transform: rotate(-60deg);
+}
+.num3 div{
+    transform: rotate(-90deg);
+}
+.num4 div{
+    transform: rotate(-120deg);
+}
+.num5 div{
+    transform: rotate(-150deg);
+}
+.num6 div{
+    transform: rotate(-180deg);
+}
+.num7 div{
+    transform: rotate(-210deg);
+}
+.num8 div{
+    transform: rotate(-240deg);
+}
+.num9 div{
+    transform: rotate(-270deg);
+}
+.num10 div{
+    transform: rotate(-300deg);
+}
+.num11 div{
+    transform: rotate(-330deg);
+}
+.num12 div{
+    transform: rotate(-360deg);
+}
+.hand{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.hand div{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+}
+#sec div{
+    background-color: rgb(41, 41, 214);
+}
+#min div{
+    background-color: #fff;
+}
+#hour div{
+    background-color: #ff105e;
+}
+.light #sec div{
+    background-color: rgb(115, 115, 175);
+}
+.light #min div{
+    background-color: #111;
+}
+.sec{
+    width: 1px;
+    height: 40%;
+}
+.min{
+    width: 3px;
+    height: 38%;
+    border-radius: 2px;
+}
+.hour{
+    width: 6px;
+    height: 28%;
+    border-radius: 4px;
+}
+.toggle{
+    position: absolute;
+    top: 30px;
+    right: 150px;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    border-radius: 50%;
+    background: #d1dae3;
+    font-family: consolas;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.light .toggle{
+    background: #091921;
+}
+.toggle::before{
+    position: absolute;
+    content: 'Light Mode';
+    white-space: nowrap;
+    color: #fff;
+    left: 25px;
+}
+.light .toggle::before{
+    position: absolute;
+    content: 'Dark Mode';
+    white-space: nowrap;
+    color: #111;
+    left: 25px;
+}
